@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="books">
+      <li>java</li>
+      <li>Python</li>
+    </ul>
+<input type="text" id="bookName"/>
+<button id="btnAdd">+</button>
+<button id="btnDel">-</button>
+<script>
+    const books = document.querySelector("#books")
+    const bookName = document.querySelector('#bookName')
+    const btnAdd = document.querySelector('#btnAdd')
+    const  btnDel = document.querySelector('#btnDel')
+
+    const addBooks = () => {
+        const oElement = document.createElemnet('li')
+        const oText = document.createTextNode(bookName.value)
+        oElement.appendChild(oText)
+        books.aooendChild(oElement)
+        bookName.value = ""
+    }
+    
+    const delBooks = () => {
+        if(books.hasChildNodes()){
+            books.removeChild(books.lastElement)
+        }
+    }
+    btnAdd.addEventListener("click",addBooks)
+    btnDel.addEventListener("CLICK",delbooks)
+</script>
+</body>
+</html>
